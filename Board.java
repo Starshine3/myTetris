@@ -1,0 +1,5 @@
+package myTetris;
+
+class Board {
+
+}
