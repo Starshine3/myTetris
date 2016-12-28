@@ -1,5 +1,0 @@
-package myTetris;
-
-class Main {
-
-}
