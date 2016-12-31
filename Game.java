@@ -1,6 +1,5 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Random;
 import java.awt.BorderLayout;
 
 import javax.swing.*;
@@ -13,9 +12,9 @@ public class Game extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Board board = new Board(row, col);
-
         add(board);
         setVisible(true);
+        board.start();
     }
 
     public Game() {
@@ -52,13 +51,15 @@ public class Game extends JFrame {
     }
 
     public static void main(String[] args) {
-        setup = new Game();
+
+        game = new Game(20, 10);
+        //setup = new Game();
     }
 
     private final int SETUP_WIDTH = 300;
     private final int SETUP_HEIGHT = 100;
     private final int GAME_WIDTH = 300;
-    private final int GAME_HEIGHT = 600;
+    private final int GAME_HEIGHT = 620;
     private static Game setup;
     private static Game game;
     private JTextField rowBox;

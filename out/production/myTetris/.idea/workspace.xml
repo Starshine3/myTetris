@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55ab9f23-85ae-432f-b0b2-d6eaa2730fe2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gjdb1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TetrominoesTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BoardGUI.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Draw.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/myTetris/Board$KeyboardControl.class" afterPath="$PROJECT_DIR$/out/production/myTetris/Board$KeyboardControl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/myTetris/Board.class" afterPath="$PROJECT_DIR$/out/production/myTetris/Board.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/myTetris/Game$ButtonListener.class" afterPath="$PROJECT_DIR$/out/production/myTetris/Game$ButtonListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/myTetris/Game.class" afterPath="$PROJECT_DIR$/out/production/myTetris/Game.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/myTetris/Tetrominoes.class" afterPath="$PROJECT_DIR$/out/production/myTetris/Tetrominoes.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Board.java" afterPath="$PROJECT_DIR$/Board.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game.java" afterPath="$PROJECT_DIR$/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tetrominoes.java" afterPath="$PROJECT_DIR$/Tetrominoes.java" />
@@ -28,19 +30,25 @@
     <favorites_list name="myTetris" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5125348">
+    <splitter split-orientation="horizontal" split-proportion="0.47424892">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="Tetrominoes.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Tetrominoes.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="720">
-                  <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
-                  <folding>
-                    <element signature="method#setShape#0;class#Tetrominoes#0" expanded="false" />
-                    <element signature="e#3095#3096#0" expanded="true" />
-                    <element signature="e#3122#3123#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="210">
+                  <caret line="104" column="8" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="RandomTests.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/RandomTests.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -48,8 +56,8 @@
           <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="720">
-                  <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+                <state relative-caret-position="170">
+                  <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -64,14 +72,11 @@
           <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Board.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-60">
-                  <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+                <state relative-caret-position="1125">
+                  <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#clearLine#0;class#Board#0" expanded="false" />
-                    <element signature="e#1446#1447#0" expanded="true" />
-                    <element signature="e#1492#1493#0" expanded="true" />
-                    <element signature="class#KeyboardControl#0;class#Board#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -100,16 +105,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/TetrominoesTest.java" />
-        <option value="$PROJECT_DIR$/Tetrominoes.java" />
+        <option value="$PROJECT_DIR$/RandomTests.java" />
         <option value="$PROJECT_DIR$/Game.java" />
         <option value="$PROJECT_DIR$/Board.java" />
+        <option value="$PROJECT_DIR$/Tetrominoes.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="214" />
-    <option name="y" value="23" />
-    <option name="width" value="1192" />
+    <option name="x" value="151" />
+    <option name="y" value="25" />
+    <option name="width" value="1634" />
     <option name="height" value="804" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -123,7 +129,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -136,14 +142,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -153,7 +152,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.Board">
+  <component name="RunManager" selected="Application.Game">
     <configuration default="false" name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Game" />
@@ -172,6 +171,21 @@
     <configuration default="false" name="Board" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Board" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="myTetris" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="RandomTests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="RandomTests" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -422,14 +436,16 @@
       <listeners />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Game" />
       <item index="1" class="java.lang.String" itemvalue="Application.Board" />
+      <item index="2" class="java.lang.String" itemvalue="Application.RandomTests" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Board" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Game" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.Game" />
+        <item index="1" class="java.lang.String" itemvalue="Application.RandomTests" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Board" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
@@ -450,7 +466,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="214" y="23" width="1192" height="804" extended-state="0" />
+    <frame x="151" y="25" width="1634" height="804" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -459,7 +475,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2819277" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272472" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -468,10 +484,10 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3421687" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -491,7 +507,29 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Game.java</url>
+          <line>87</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Board.java</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Board.java</url>
+          <line>58</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="33" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -501,13 +539,46 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Tetrominoes.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RandomTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#setShape#0;class#Tetrominoes#0" expanded="false" />
-            <element signature="e#3095#3096#0" expanded="true" />
-            <element signature="e#3122#3123#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#clearLine#0;class#Board#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tetrominoes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -519,38 +590,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tetrominoes.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaButtonUI.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
-          <folding>
-            <element signature="method#setShape#0;class#Tetrominoes#0" expanded="false" />
-            <element signature="e#3095#3096#0" expanded="true" />
-            <element signature="e#3122#3123#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="191">
+          <caret line="499" column="0" selection-start-line="499" selection-start-column="0" selection-end-line="499" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Game.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="161">
+          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaTextFieldUI.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="98" column="5" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaRootPaneUI.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1408">
+          <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaPanelUI.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="394" column="0" selection-start-line="394" selection-start-column="0" selection-end-line="394" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RandomTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="1125">
+          <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#clearLine#0;class#Board#0" expanded="false" />
-            <element signature="e#1446#1447#0" expanded="true" />
-            <element signature="e#1492#1493#0" expanded="true" />
-            <element signature="class#KeyboardControl#0;class#Board#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tetrominoes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="104" column="8" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
