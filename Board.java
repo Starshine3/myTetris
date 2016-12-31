@@ -119,6 +119,7 @@ public class Board extends JPanel implements ActionListener {
                 next.move('l');
             } else if (pressed == KeyEvent.VK_RIGHT) {
                 next.move('r');
+                System.out.print("rotated");
             } else if (pressed == KeyEvent.VK_DOWN) {
                 next.move('d');
             } else if (pressed == KeyEvent.VK_UP) {
@@ -128,7 +129,6 @@ public class Board extends JPanel implements ActionListener {
             } else if (pressed == 'p' || pressed == 'P') {
                 pause();
             }
-            System.out.print("rotated");
             repaint();
         }
     }
