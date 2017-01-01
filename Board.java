@@ -115,6 +115,10 @@ public class Board extends JPanel implements ActionListener {
         @Override
         public void keyPressed(KeyEvent e) {
             int pressed = e.getKeyCode();
+            if (pressed == KeyEvent.VK_N) {
+                newTetromino();
+                System.out.print("newpiece");
+            }
             if (pressed == KeyEvent.VK_LEFT) {
                 next.move('l');
             } else if (pressed == KeyEvent.VK_RIGHT) {
