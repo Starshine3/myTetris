@@ -22,25 +22,25 @@ public class Tetrominoes {
                 _width = 4;
                 _currColLeft = _boardCols / 2 - 2;
                 for (int i = 0; i < _width; i++) {
-                    _board.placeTetromino(id, _currTopRow, _currColLeft + i);
+                    _board.placeTetromino(id, type, _currTopRow, _currColLeft + i);
                 }
                 break;
             case 2:
                 _height = 2;
                 _width = 3;
                 _currColLeft = _boardCols / 2 - 1;
-                _board.placeTetromino(id, _currTopRow, _currColLeft);
+                _board.placeTetromino(id, type, _currTopRow, _currColLeft);
                 for (int i = 0; i < _width; i++) {
-                    _board.placeTetromino(id, _currTopRow + 1, _currColLeft + i);
+                    _board.placeTetromino(id, type, _currTopRow + 1, _currColLeft + i);
                 }
                 break;
             case 3:
                 _height = 2;
                 _width = 3;
                 _currColLeft = _boardCols / 2 - 1;
-                _board.placeTetromino(id, _currTopRow, _currColLeft + 2);
+                _board.placeTetromino(id, type, _currTopRow, _currColLeft + 2);
                 for (int i = 0; i < _width; i++) {
-                    _board.placeTetromino(id, _currTopRow + 1, _currColLeft + i);
+                    _board.placeTetromino(id, type, _currTopRow + 1, _currColLeft + i);
                 }
                 break;
             case 4:
@@ -49,7 +49,7 @@ public class Tetrominoes {
                 _currColLeft = _boardCols / 2 - 1;
                 for (int i = 0; i < _height; i++) {
                     for (int j = 0; j < _width; j++) {
-                        _board.placeTetromino(id, _currTopRow + i, _currColLeft + j);
+                        _board.placeTetromino(id, type, _currTopRow + i, _currColLeft + j);
                     }
                 }
                 break;
@@ -57,28 +57,28 @@ public class Tetrominoes {
                 _height = 2;
                 _width = 3;
                 _currColLeft = _boardCols / 2 - 1;
-                _board.placeTetromino(id, _currTopRow, _currColLeft + 1);
-                _board.placeTetromino(id, _currTopRow, _currColLeft + 2);
-                _board.placeTetromino(id, _currTopRow + 1, _currColLeft);
-                _board.placeTetromino(id, _currTopRow + 1, _currColLeft + 1);
+                _board.placeTetromino(id, type, _currTopRow, _currColLeft + 1);
+                _board.placeTetromino(id, type, _currTopRow, _currColLeft + 2);
+                _board.placeTetromino(id, type, _currTopRow + 1, _currColLeft);
+                _board.placeTetromino(id, type, _currTopRow + 1, _currColLeft + 1);
                 break;
             case 6:
                 _height = 2;
                 _width = 3;
                 _currColLeft = _boardCols / 2 - 1;
-                _board.placeTetromino(id, _currTopRow, _currColLeft + 1);
+                _board.placeTetromino(id, type, _currTopRow, _currColLeft + 1);
                 for (int i = 0; i < _width; i++) {
-                    _board.placeTetromino(id, _currTopRow + 1, _currColLeft + i);
+                    _board.placeTetromino(id, type, _currTopRow + 1, _currColLeft + i);
                 }
                 break;
             case 7:
                 _height = 2;
                 _width = 3;
                 _currColLeft = _boardCols / 2 - 1;
-                _board.placeTetromino(id, _currTopRow, _currColLeft);
-                _board.placeTetromino(id, _currTopRow, _currColLeft + 1);
-                _board.placeTetromino(id, _currTopRow + 1, _currColLeft + 1);
-                _board.placeTetromino(id, _currTopRow + 1, _currColLeft + 2);
+                _board.placeTetromino(id, type, _currTopRow, _currColLeft);
+                _board.placeTetromino(id, type, _currTopRow, _currColLeft + 1);
+                _board.placeTetromino(id, type, _currTopRow + 1, _currColLeft + 1);
+                _board.placeTetromino(id, type, _currTopRow + 1, _currColLeft + 2);
                 break;
         }
     }
@@ -101,14 +101,15 @@ public class Tetrominoes {
             int[][] temp = new int[_side][_side];
             for (int i = _side - 1; i >= 0; i--) {
                 for (int j = 0; j < _side; j++) {
-                    temp[_side - i - 1][j]
-                            = _board.getTetrominoID(_currTopRow + j, _currColLeft + i);
+                    if (_board.getTetrominoID(_currTopRow + j, _currColLeft + i) == _id) {
+                        temp[_side - i - 1][j] = _id;
+                    }
                 }
             }
             temp = fixEmpty(temp);
             for (int i = 0; i < _side; i++) {
                 for (int j = 0; j < _side; j++) {
-                    _board.placeTetromino(temp[i][j], _currTopRow + i, _currColLeft + j);
+                    _board.placeTetromino(temp[i][j], _type, _currTopRow + i, _currColLeft + j);
                 }
             }
             swapHW();
@@ -254,7 +255,7 @@ public class Tetrominoes {
                 int copy = _board.getTetrominoID(_currTopRow + i, _currColLeft + start);
                 int paste = _board.getTetrominoID(_currTopRow + i, _currColLeft + start + direction);
                 if ((copy == _id && paste == 0)) {
-                    _board.placeTetromino(copy, _currTopRow + i, _currColLeft + start + direction);
+                    _board.placeTetromino(copy, _type, _currTopRow + i, _currColLeft + start + direction);
                     _board.clearTetromino(_currTopRow + i, _currColLeft + start);
 
                 } else if ((copy == _id && paste == _id)) {
@@ -267,13 +268,15 @@ public class Tetrominoes {
     }
 
     public void moveDown() {
-        for (int i = _height - 1; i >= -1; i--) {
+        for (int i = _height - 1; i >= 0; i--) {
             for (int j = 0; j < _width; j++) {
-                if (i == -1) {
-                    _board.placeTetromino(0, _currTopRow + i + 1, _currColLeft + j);
-                } else {
-                    int neighbor = _board.getTetrominoID(_currTopRow + i, _currColLeft + j);
-                    _board.placeTetromino(neighbor, _currTopRow + i + 1, _currColLeft + j);
+                int copy = _board.getTetrominoID(_currTopRow + i, _currColLeft + j);
+                int paste = _board.getTetrominoID(_currTopRow + i + 1, _currColLeft + j);
+                if ((copy == _id && paste == 0)) {
+                    _board.placeTetromino(copy, _type, _currTopRow + i + 1, _currColLeft + j);
+                    _board.clearTetromino(_currTopRow + i, _currColLeft + j);
+                } else if ((copy == _id && paste == _id)) {
+                    _board.clearTetromino(_currTopRow + i, _currColLeft + j);
                 }
             }
         }
@@ -292,6 +295,7 @@ public class Tetrominoes {
 
     public int getID() {return _id;}
 
+    public int getType() {return _type;}
 
     private int _id;
     private int _type;

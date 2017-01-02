@@ -41,9 +41,9 @@ public class Board extends JPanel implements ActionListener {
     }
 
     public void newTetromino() {
-        next = new Tetrominoes(numTetrominoes, 2, this);
+//        next = new Tetrominoes(numTetrominoes, 2, this);
         numTetrominoes++;
-//        next = new Tetrominoes(random.nextInt(7) + 1, this);
+        next = new Tetrominoes(numTetrominoes, random.nextInt(7) + 1, this);
         repaint();
     }
     public int getRows() {
@@ -54,19 +54,24 @@ public class Board extends JPanel implements ActionListener {
         return COLS;
     }
 
-    /* Return the ID number of the tetromino in this square. */
-    public int getTetrominoID(int row, int col) {return _board[row][col];}
-
-    public void placeTetromino(int id, int row, int col) {
-        _board[row][col] = id;
+    public void placeTetromino(int id, int type, int row, int col) {
+        _board[row][col][0] = id;
+        _board[row][col][1] = type;
 //        int here = getTetrominoID(row, col);
 //        if (here == 0) {
 //            _board[row][col] = id;
 //        }
     }
 
+    /* Return the ID number of the tetromino in this square. */
+    public int getTetrominoID(int row, int col) {return _board[row][col][0];}
+
+    /* Return the type of the tetromino in this square. */
+    public int getTetrominoType(int row, int col) {return _board[row][col][1];}
+
     public void clearTetromino(int row, int col) {
-        _board[row][col] = 0;
+        _board[row][col][0] = 0;
+        _board[row][col][1] = 0;
     }
 
     public boolean isGameOver() {
@@ -79,9 +84,9 @@ public class Board extends JPanel implements ActionListener {
 
     /* Create and draw a new board. */
     public void newBoard() {
-        _board = new int[ROWS][COLS];
+        _board = new int[ROWS][COLS][2];
         _gameOver = false;
-        numTetrominoes = 0;
+        numTetrominoes = 1;
         repaint();
     }
 
@@ -90,8 +95,8 @@ public class Board extends JPanel implements ActionListener {
         super.paint(g);
         for (int r = 0; r < ROWS; r++) {
             for (int c = 0; c < COLS; c++) {
-                int blockID = getTetrominoID(r, c);
-                drawSquares(g, Tetrominoes.tetrominoColors[blockID], r, c);
+                int blockType = getTetrominoType(r, c);
+                drawSquares(g, Tetrominoes.tetrominoColors[blockType], r, c);
             }
         }
     }
@@ -104,7 +109,7 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private int numTetrominoes;
-    private int[][] _board;
+    private int[][][] _board;
     private final int ROWS;
     private final int COLS;
     private final int SQUARESIZE = 30;
