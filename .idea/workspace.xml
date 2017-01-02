@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55ab9f23-85ae-432f-b0b2-d6eaa2730fe2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/myTetris/Board$KeyboardControl.class" afterPath="$PROJECT_DIR$/out/production/myTetris/Board$KeyboardControl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/myTetris/Tetrominoes.class" afterPath="$PROJECT_DIR$/out/production/myTetris/Tetrominoes.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Board.java" afterPath="$PROJECT_DIR$/Board.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tetrominoes.java" afterPath="$PROJECT_DIR$/Tetrominoes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/myTetris/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/myTetris/.idea/workspace.xml" />
     </list>
     <ignored path="myTetris.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,17 +27,24 @@
     <favorites_list name="myTetris" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5337955">
+    <splitter split-orientation="horizontal" split-proportion="0.49663928">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="Tetrominoes.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Tetrominoes.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="331">
-                  <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+                <state relative-caret-position="240">
+                  <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
                   <folding>
-                    <element signature="e#9260#9261#0" expanded="true" />
-                    <element signature="e#9292#9293#0" expanded="true" />
+                    <element signature="method#newTetromino#0;class#Tetrominoes#0" expanded="false" />
+                    <element signature="method#getBoardInfo#0;class#Tetrominoes#0" expanded="false" />
+                    <element signature="method#rotate#0;class#Tetrominoes#0" expanded="false" />
+                    <element signature="method#fixEmpty#0;class#Tetrominoes#0" expanded="false" />
+                    <element signature="method#emptyRow#0;class#Tetrominoes#0" expanded="false" />
+                    <element signature="method#swapHW#0;class#Tetrominoes#0" expanded="false" />
+                    <element signature="method#checkIfAtBottom#0;class#Tetrominoes#0" expanded="false" />
+                    <element signature="method#moveDown#0;class#Tetrominoes#0" expanded="false" />
+                    <element signature="method#hardDrop#0;class#Tetrominoes#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -69,10 +79,12 @@
           <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Board.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="91">
-                  <caret line="121" column="21" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
+                <state relative-caret-position="255">
+                  <caret line="61" column="41" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#1620#1621#0" expanded="true" />
+                    <element signature="e#1656#1657#0" expanded="true" />
                     <element signature="method#clearLine#0;class#Board#0" expanded="false" />
                   </folding>
                 </state>
@@ -515,9 +527,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="244" />
-    <option name="y" value="41" />
-    <option name="width" value="1196" />
+    <option name="x" value="4" />
+    <option name="y" value="28" />
+    <option name="width" value="1381" />
     <option name="height" value="783" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -868,7 +880,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="244" y="41" width="1196" height="783" extended-state="0" />
+    <frame x="4" y="28" width="1381" height="783" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -884,7 +896,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14020029" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24954462" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3936324" sideWeight="0.49356222" order="3" side_tool="false" content_ui="tabs" />
@@ -918,55 +930,13 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Tetrominoes.java</url>
-          <line>227</line>
-          <properties />
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Tetrominoes.java</url>
-          <line>228</line>
-          <properties />
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Tetrominoes.java</url>
-          <line>221</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Board.java</url>
-          <line>124</line>
+          <line>127</line>
           <properties />
           <option name="timeStamp" value="64" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Tetrominoes.java</url>
-          <line>204</line>
-          <properties />
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Tetrominoes.java</url>
-          <line>269</line>
-          <properties />
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Tetrominoes.java</url>
-          <line>268</line>
-          <properties />
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Tetrominoes.java</url>
-          <line>263</line>
-          <properties />
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="79" />
+      <option name="time" value="81" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -980,8 +950,15 @@
         <state relative-caret-position="3210">
           <caret line="216" column="21" selection-start-line="216" selection-start-column="21" selection-end-line="216" selection-end-column="21" />
           <folding>
-            <element signature="e#9260#9261#0" expanded="true" />
-            <element signature="e#9292#9293#0" expanded="true" />
+            <element signature="method#newTetromino#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#getBoardInfo#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#rotate#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#fixEmpty#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#emptyRow#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#swapHW#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#checkIfAtBottom#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#moveDown#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#hardDrop#0;class#Tetrominoes#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1010,6 +987,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1620#1621#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
             <element signature="method#clearLine#0;class#Board#0" expanded="false" />
           </folding>
         </state>
@@ -1423,8 +1402,15 @@
         <state relative-caret-position="3210">
           <caret line="216" column="21" selection-start-line="216" selection-start-column="21" selection-end-line="216" selection-end-column="21" />
           <folding>
-            <element signature="e#9260#9261#0" expanded="true" />
-            <element signature="e#9292#9293#0" expanded="true" />
+            <element signature="method#newTetromino#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#getBoardInfo#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#rotate#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#fixEmpty#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#emptyRow#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#swapHW#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#checkIfAtBottom#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#moveDown#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#hardDrop#0;class#Tetrominoes#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1453,6 +1439,8 @@
           <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1620#1621#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
             <element signature="method#clearLine#0;class#Board#0" expanded="false" />
           </folding>
         </state>
@@ -1866,8 +1854,15 @@
         <state relative-caret-position="1695">
           <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
           <folding>
-            <element signature="e#9260#9261#0" expanded="true" />
-            <element signature="e#9292#9293#0" expanded="true" />
+            <element signature="method#newTetromino#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#getBoardInfo#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#rotate#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#fixEmpty#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#emptyRow#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#swapHW#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#checkIfAtBottom#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#moveDown#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#hardDrop#0;class#Tetrominoes#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1896,6 +1891,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1620#1621#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
             <element signature="method#clearLine#0;class#Board#0" expanded="false" />
           </folding>
         </state>
@@ -1906,8 +1903,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#9260#9261#0" expanded="true" />
-            <element signature="e#9292#9293#0" expanded="true" />
+            <element signature="method#newTetromino#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#getBoardInfo#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#rotate#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#fixEmpty#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#emptyRow#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#swapHW#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#checkIfAtBottom#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#moveDown#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#hardDrop#0;class#Tetrominoes#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1959,6 +1963,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="394" column="0" selection-start-line="394" selection-start-column="0" selection-end-line="394" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaImageFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="293" column="0" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaMnemonicHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RandomTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2365,44 +2401,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RandomTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaImageFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="293" column="0" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaMnemonicHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="121" column="21" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
+        <state relative-caret-position="255">
+          <caret line="61" column="41" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1620#1621#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
             <element signature="method#clearLine#0;class#Board#0" expanded="false" />
           </folding>
         </state>
@@ -2410,11 +2416,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tetrominoes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
           <folding>
-            <element signature="e#9260#9261#0" expanded="true" />
-            <element signature="e#9292#9293#0" expanded="true" />
+            <element signature="method#newTetromino#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#getBoardInfo#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#rotate#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#fixEmpty#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#emptyRow#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#swapHW#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#checkIfAtBottom#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#moveDown#0;class#Tetrominoes#0" expanded="false" />
+            <element signature="method#hardDrop#0;class#Tetrominoes#0" expanded="false" />
           </folding>
         </state>
       </provider>

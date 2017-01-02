@@ -41,7 +41,9 @@ public class Board extends JPanel implements ActionListener {
     }
 
     public void newTetromino() {
-        next = new Tetrominoes(random.nextInt(7) + 1, this);
+        next = new Tetrominoes(numTetrominoes, 2, this);
+        numTetrominoes++;
+//        next = new Tetrominoes(random.nextInt(7) + 1, this);
         repaint();
     }
     public int getRows() {
@@ -55,17 +57,16 @@ public class Board extends JPanel implements ActionListener {
     /* Return the ID number of the tetromino in this square. */
     public int getTetrominoID(int row, int col) {return _board[row][col];}
 
-    public boolean canPlaceTetromino(int row, int col) {
-        return true;
-    }
-
     public void placeTetromino(int id, int row, int col) {
         _board[row][col] = id;
-//        if (canPlaceTetromino(row, col)) {
+//        int here = getTetrominoID(row, col);
+//        if (here == 0) {
 //            _board[row][col] = id;
-//        } else {
-//            _gameOver = true;
 //        }
+    }
+
+    public void clearTetromino(int row, int col) {
+        _board[row][col] = 0;
     }
 
     public boolean isGameOver() {
@@ -80,6 +81,7 @@ public class Board extends JPanel implements ActionListener {
     public void newBoard() {
         _board = new int[ROWS][COLS];
         _gameOver = false;
+        numTetrominoes = 0;
         repaint();
     }
 
@@ -101,6 +103,7 @@ public class Board extends JPanel implements ActionListener {
         g.drawRect(col * SQUARESIZE, row * SQUARESIZE, SQUARESIZE, SQUARESIZE);
     }
 
+    private int numTetrominoes;
     private int[][] _board;
     private final int ROWS;
     private final int COLS;
@@ -123,7 +126,6 @@ public class Board extends JPanel implements ActionListener {
                 next.move('l');
             } else if (pressed == KeyEvent.VK_RIGHT) {
                 next.move('r');
-                System.out.print("rotated");
             } else if (pressed == KeyEvent.VK_DOWN) {
                 next.move('d');
             } else if (pressed == KeyEvent.VK_UP) {
