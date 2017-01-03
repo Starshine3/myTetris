@@ -88,28 +88,40 @@ public class Tetrominoes {
         _boardCols = _board.getCols();
     }
 
-    /* Check whether this tetromino can rotate
-    /* in clockwise orientation. */
-    public boolean canRotate() {
+    /* Check whether can place the rotated version of this tetromino on
+    /* on the board. */
+    public boolean canPlace(int[][] grid) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                int paste = _board.getTetrominoID(_currTopRow + j, _currColLeft + i);
+                if (grid[i][j] == _id
+                        && (paste != _id || paste != 0)) {
+                    return false;
+                }
+            }
+        }
         return true;
     }
 
     /* Rotate this tetromino in clockwise orientation,
     /* if possible. */
     public void rotate() {
-        if (canRotate()) {
-            int[][] temp = new int[_side][_side];
-            for (int i = _side - 1; i >= 0; i--) {
-                for (int j = 0; j < _side; j++) {
-                    if (_board.getTetrominoID(_currTopRow + j, _currColLeft + i) == _id) {
-                        temp[_side - i - 1][j] = _id;
-                    }
-                }
+        int[][] temp = new int[_width][_height];
+        for (int i = _width - 1; i >= 0; i--) {
+            for (int j = 0; j < _height; j++) {
+                temp[_width - i - 1][j] = _board.getTetrominoID(_currTopRow + j, _currColLeft + i);
             }
-            temp = fixEmpty(temp);
+        }
+        if (canPlace(temp)) {
+            //temp = fixEmpty(temp);
             for (int i = 0; i < _side; i++) {
                 for (int j = 0; j < _side; j++) {
-                    _board.placeTetromino(temp[i][j], _type, _currTopRow + i, _currColLeft + j);
+                    int copy = temp[i][j];
+                    if (copy == _id) {
+                        _board.placeTetromino(copy, _type, _currTopRow + i, _currColLeft + j);
+                    } else if (copy == 0) {
+                        _board.clearTetromino(_currTopRow + i, _currColLeft + j);
+                    }
                 }
             }
             swapHW();
