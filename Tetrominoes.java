@@ -88,21 +88,6 @@ public class Tetrominoes {
         _boardCols = _board.getCols();
     }
 
-    /* Check whether can place the rotated version of this tetromino on
-    /* on the board. */
-    public boolean canPlace(int[][] grid) {
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                int paste = _board.getTetrominoID(_currTopRow + j, _currColLeft + i);
-                if (grid[i][j] == _id
-                        && (paste != _id || paste != 0)) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
     /* Rotate this tetromino in clockwise orientation,
     /* if possible. */
     public void rotate() {
@@ -112,61 +97,45 @@ public class Tetrominoes {
                 temp[_width - i - 1][j] = _board.getTetrominoID(_currTopRow + j, _currColLeft + i);
             }
         }
-        if (canPlace(temp)) {
-            //temp = fixEmpty(temp);
-            for (int i = 0; i < _side; i++) {
-                for (int j = 0; j < _side; j++) {
-                    int copy = temp[i][j];
-                    if (copy == _id) {
-                        _board.placeTetromino(copy, _type, _currTopRow + i, _currColLeft + j);
-                    } else if (copy == 0) {
+        int adjustL = 0, adjustU = 0;
+        while (_currColLeft - adjustL + temp[0].length > _boardCols) {
+            adjustL++;
+        } while (_currTopRow - adjustU + temp.length > _boardRows) {
+            adjustU++;
+        }
+        boolean canRotate = true;
+        for (int i = 0; i < temp.length; i++) {
+            for (int j = 0; j < temp[i].length; j++) {
+                int paste = _board.getTetrominoID(_currTopRow - adjustU + j, _currColLeft - adjustL + i);
+                if (temp[i][j] == _id
+                        && (!(paste == _id || paste == 0))) {
+                    canRotate = false;
+                }
+            }
+        }
+        if (canRotate) {
+            for (int i = 0; i < _height; i++) {
+                for (int j = 0; j < _width; j++) {
+                    int paste = _board.getTetrominoID(_currTopRow + i, _currColLeft + j);
+                    if (paste == _id) {
                         _board.clearTetromino(_currTopRow + i, _currColLeft + j);
                     }
                 }
             }
             swapHW();
-        }
-    }
-
-    public int[][] fixEmpty(int[][] grid) {
-        empty = new int[_side];
-        if (emptyRow(grid)) {
-            for (int i = 0; i < grid.length; i++) {
-                for (int j = 0; j < grid[i].length; j++) {
-                    if (i >= grid.length - 1) {
-                        grid[i][j] = 0;
-                    } else {
-                        grid[i][j] = grid[i + 1][j];
+            for (int i = 0; i < _height; i++) {
+                for (int j = 0; j < _width; j++) {
+                    int copy = temp[i][j];
+                    if (copy == _id) {
+                        _board.placeTetromino(copy, _type, _currTopRow - adjustU + i, _currColLeft - adjustL + j);
+                    } else if (copy == 0) {
+                        _board.clearTetromino(_currTopRow - adjustU + i, _currColLeft - adjustL + j);
                     }
                 }
             }
-            return grid;
-        } else if (_id == 1) {
-            int col = 0;
-            for (int i = 0; i < grid[0].length; i++) {
-                if (grid[0][i] != 0) {
-                    col = i;
-                    break;
-                }
-            }
-            for (int j = 0; j < grid.length; j++) {
-                grid[j][col] = 0;
-                grid[j][_side/2] = _id;
-            }
-            return grid;
-        } else {
-            return grid;
+            _currTopRow -= adjustU;
+            _currColLeft -= adjustL;
         }
-    }
-
-    public boolean emptyRow(int[][] grid) {
-        boolean isEmpty = true;
-        for (int i = 0; i < _side; i++) {
-            if (empty[i] != grid[0][i]) {
-                isEmpty = false;
-            }
-        }
-        return isEmpty;
     }
 
     public void swapHW(){
@@ -197,18 +166,21 @@ public class Tetrominoes {
     // thisCol: index of this col       //canMoveHorizontal
     // colAway: how far is neighborCol away from thisCol
     public boolean checkIfEmptyNeighbor(int thisCol, int colAway) {
-        int toMove = 0;
-        for (int i = 0; i < _height; i++) {
-            if (_board.getTetrominoID(_currTopRow + i, thisCol) == _id) {
+        if ((thisCol == 0 && colAway == -1)
+            || (thisCol == _boardCols -1 && colAway == 1)){
+            return false;
+        }
+        int toMove = 0, rows = 0, col = 0;
+        while (rows < _height && col < _width) {
+            if (_board.getTetrominoID(_currTopRow + rows, thisCol - (col * colAway)) == _id) {
                 toMove++;
-                if (_board.getTetrominoID(_currTopRow + i, thisCol + colAway) == 0) {
+                if (_board.getTetrominoID(_currTopRow + rows, thisCol - ((col - 1) * colAway)) == 0) {
                     toMove--;
                 }
-            } else if (_board.getTetrominoID(_currTopRow + i, thisCol - colAway) == _id) {
-                toMove++;
-                if (_board.getTetrominoID(_currTopRow + i, thisCol) == 0) {
-                    toMove--;
-                }
+                rows++;
+                col = 0;
+            } else {
+                col++;
             }
         }
         return toMove == 0;
@@ -218,20 +190,18 @@ public class Tetrominoes {
         if (_currTopRow + _height >= _boardRows) {
             return true;
         }
-        int toMove = 0;
-        for (int j = 0; j < _height; j++) {
-            for (int i = 0; i < _width; i++) {
-                if (_board.getTetrominoID(_currTopRow + _height - 1, _currColLeft + i) != 0) {
-                    toMove++;
-                    if (_board.getTetrominoID(_currTopRow + _height, _currColLeft + i) == 0) {
-                        toMove--;
-                    }
-                } else if (_board.getTetrominoID(_currTopRow + _height - 2, _currColLeft + i) != 0) {
-                    toMove++;
-                    if (_board.getTetrominoID(_currTopRow + _height - 1, _currColLeft + i) == 0) {
-                        toMove--;
-                    }
+        int toMove = 0, rows = 0, col = 0;
+        while (rows < _height && col < _width) {
+            if (_board.getTetrominoID(_currTopRow + _height - 1 - rows, _currColLeft + col) == _id) {
+                toMove++;
+                if (_board.getTetrominoID(_currTopRow + _height - rows, _currColLeft + col) == 0) {
+                    toMove--;
                 }
+
+                col++;
+                rows = 0;
+            } else {
+                rows++;
             }
         }
         return toMove != 0;
@@ -292,7 +262,7 @@ public class Tetrominoes {
                 }
             }
         }
-    _currTopRow++;
+        _currTopRow++;
     }
 
     public void hardDrop() {
@@ -322,7 +292,6 @@ public class Tetrominoes {
             = {Color.gray, Color.cyan, Color.blue,
             Color.orange, Color.yellow, Color.green,
             Color.pink, Color.red};
-    private int[] empty;
 
     private final Board _board;
     private int _boardRows;

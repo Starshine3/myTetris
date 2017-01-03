@@ -41,9 +41,9 @@ public class Board extends JPanel implements ActionListener {
     }
 
     public void newTetromino() {
-//        next = new Tetrominoes(numTetrominoes, 2, this);
+        next = new Tetrominoes(numTetrominoes, 2, this);
         numTetrominoes++;
-        next = new Tetrominoes(numTetrominoes, random.nextInt(7) + 1, this);
+        //next = new Tetrominoes(numTetrominoes, random.nextInt(7) + 1, this);
         repaint();
     }
     public int getRows() {
@@ -125,7 +125,6 @@ public class Board extends JPanel implements ActionListener {
             int pressed = e.getKeyCode();
             if (pressed == KeyEvent.VK_N) {
                 newTetromino();
-                System.out.print("newpiece");
             }
             if (pressed == KeyEvent.VK_LEFT) {
                 next.move('l');
