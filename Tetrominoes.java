@@ -88,60 +88,91 @@ public class Tetrominoes {
         _boardCols = _board.getCols();
     }
 
-    /* Rotate this tetromino in clockwise orientation,
-    /* if possible. */
-    public void rotate() {
-        int[][] temp = new int[_width][_height];
+    public int[][] getRotatedForm() {
+        int[][] temp = new int[_width][_height];        //get rotated form
         for (int i = _width - 1; i >= 0; i--) {
             for (int j = 0; j < _height; j++) {
-                temp[_width - i - 1][j] = _board.getTetrominoID(_currTopRow + j, _currColLeft + i);
+                int copy = _board.getTetrominoID(_currTopRow + j, _currColLeft + i);
+                if (copy == _id || copy == 0) {
+                    temp[_width - i - 1][j] = copy;
+                }
             }
         }
-        int adjustL = 0, adjustU = 0;
-        while (_currColLeft - adjustL + temp[0].length > _boardCols) {
+        return temp;
+    }
+
+    public void clearOld() {
+        for (int i = 0; i < _height; i++) {     //clear old
+            for (int j = 0; j < _width; j++) {
+                int paste = _board.getTetrominoID(_currTopRow + i, _currColLeft + j);
+                if (paste == _id) {
+                    _board.clearTetromino(_currTopRow + i, _currColLeft + j);
+                }
+            }
+        }
+    }
+
+    /* Rotate this tetromino in clockwise orientation,  //get the rotated form -> clear original -> find way to fit copy -> place new
+    /* if possible. */
+    public void rotate() {
+        int[][] temp = getRotatedForm(); //get rotated form
+        clearOld();
+        swapHW();
+        int adjustL = 0, adjustU = 0;       //find way to fit (keep currtoprow)
+        while (_currColLeft + adjustL < 0) {
+            adjustL--;
+        } while (_currColLeft + _width - adjustL > _boardCols) {
             adjustL++;
-        } while (_currTopRow - adjustU + temp.length > _boardRows) {
-            adjustU++;
         }
-        boolean canRotate = true;
-        for (int i = 0; i < temp.length; i++) {
-            for (int j = 0; j < temp[i].length; j++) {
-                int paste = _board.getTetrominoID(_currTopRow - adjustU + j, _currColLeft - adjustL + i);
-                if (temp[i][j] == _id
-                        && (!(paste == _id || paste == 0))) {
-                    canRotate = false;
-                }
-            }
-        }
-        if (canRotate) {
+        boolean cont = false;
+        while (true) {
             for (int i = 0; i < _height; i++) {
                 for (int j = 0; j < _width; j++) {
-                    int paste = _board.getTetrominoID(_currTopRow + i, _currColLeft + j);
-                    if (paste == _id) {
-                        _board.clearTetromino(_currTopRow + i, _currColLeft + j);
+                    int paste = _board.getTetrominoID(_currTopRow - adjustU + i, _currColLeft - adjustL + j);
+                    if (paste != _id && paste != 0){
+                        cont = true;
+                        continue;
                     }
                 }
             }
-            swapHW();
-            for (int i = 0; i < _height; i++) {
-                for (int j = 0; j < _width; j++) {
-                    int copy = temp[i][j];
-                    if (copy == _id) {
-                        _board.placeTetromino(copy, _type, _currTopRow - adjustU + i, _currColLeft - adjustL + j);
-                    } else if (copy == 0) {
-                        _board.clearTetromino(_currTopRow - adjustU + i, _currColLeft - adjustL + j);
-                    }
+            if (!cont) {
+                break;
+            } else {
+                if (adjustU < _currTopRow) {
+                    adjustU++;
+                    cont = false;
+                } else {
+                    temp = getRotatedForm();
+                    swapHW();
+                    adjustU = 0;
+                    adjustL = 0;
+                    break;
+                }
+
+            }
+        }
+               //place new
+        for (int i = 0; i < _height; i++) {
+            for (int j = 0; j < _width; j++) {
+                int copy = temp[i][j];
+                if (copy == _id) {
+                    _board.placeTetromino(copy, _type, _currTopRow - adjustU + i, _currColLeft - adjustL + j);
+                } else if (copy == 0) {
+                    _board.clearTetromino(_currTopRow - adjustU + i, _currColLeft - adjustL + j);
                 }
             }
-            _currTopRow -= adjustU;
-            _currColLeft -= adjustL;
         }
+        _currTopRow -= adjustU;
+        _currColLeft -= adjustL;
     }
 
     public void swapHW(){
         int temp = _height;
         _height = _width;
         _width = temp;
+        if (_currTopRow != 0) {
+            _currTopRow += _width - _height;
+        }
     }
 
     /* Check whether this tetromino can move in the
@@ -210,14 +241,13 @@ public class Tetrominoes {
     /* Move this tetromino 1 block to the left, right,
     /* or down, if possible. */
     public void move(char direction) {
-        if (canMove(direction)) {
-            if (direction == 'l') {
-                moveHorizontal(true);
-            } else if (direction == 'r') {
-                moveHorizontal(false);
-            } else if (direction == 'd') {
-                moveDown();
-            }
+        assert (canMove(direction));
+        if (direction == 'l') {
+            moveHorizontal(true);
+        } else if (direction == 'r') {
+            moveHorizontal(false);
+        } else if (direction == 'd') {
+            moveDown();
         }
     }
 
@@ -266,7 +296,7 @@ public class Tetrominoes {
     }
 
     public void hardDrop() {
-        while (!_atBottom) {
+        while (!checkIfAtBottom()) {
             move('d');
         }
     }
@@ -275,9 +305,20 @@ public class Tetrominoes {
         return _atBottom;
     }
 
+    //Used for clearing lines; increase currTopRow by 1
+    public void adjustTop() {
+        _currTopRow += 1;
+    }
+
     public int getID() {return _id;}
 
     public int getType() {return _type;}
+
+    public int getTopRow() {return _currTopRow;}
+
+    public int getHeight() {return _height;}
+
+    public int getWidth() {return _width;}
 
     private int _id;
     private int _type;
