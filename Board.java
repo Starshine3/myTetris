@@ -25,12 +25,13 @@ public class Board extends JPanel implements ActionListener {
     // to spawn new piece
     @Override
     public void actionPerformed(ActionEvent e) {
-        try {
-            next.move('d');
-        } catch (AssertionError err) {
+        if (next.isAtBottom()) {
             newTetromino();
+        } else {
+            next.move('d');
+            repaint();
+            clearLine();
         }
-        repaint();
     }
 
     public void start() {
@@ -95,20 +96,12 @@ public class Board extends JPanel implements ActionListener {
         int thisHeight = next.getHeight();
         int thisTopRow = next.getTopRow();
         boolean repaint = false;
-        for (int i = 0, j = 0; i < thisHeight && j < thisHeight; j++) {
+        for (int i = 0; i < thisHeight; i++) {
             if (shouldClearLine(thisTopRow + i)) {
                 doClearLine(thisTopRow + i);
                 moveRows(thisTopRow + i);
                 repaint = true;
-                i = 0;
-                thisTopRow = next.getTopRow();
-            } else {
-                i++;
             }
-        }
-        if (repaint) {
-            repaint();
-            newTetromino();
         }
     }
 
@@ -186,7 +179,6 @@ public class Board extends JPanel implements ActionListener {
         @Override
         public void keyPressed(KeyEvent e) {
             int pressed = e.getKeyCode();
-            //char direction = ' ';
             if (pressed == KeyEvent.VK_N) {
                 newTetromino();
             }

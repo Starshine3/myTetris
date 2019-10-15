@@ -241,13 +241,14 @@ public class Tetrominoes {
     /* Move this tetromino 1 block to the left, right,
     /* or down, if possible. */
     public void move(char direction) {
-        assert (canMove(direction));
-        if (direction == 'l') {
-            moveHorizontal(true);
-        } else if (direction == 'r') {
-            moveHorizontal(false);
-        } else if (direction == 'd') {
-            moveDown();
+        if (canMove(direction)) {
+            if (direction == 'l') {
+                moveHorizontal(true);
+            } else if (direction == 'r') {
+                moveHorizontal(false);
+            } else if (direction == 'd') {
+                moveDown();
+            }
         }
     }
 
@@ -310,6 +311,9 @@ public class Tetrominoes {
         _currTopRow += 1;
     }
 
+    public void moveDoneOneLine() {
+        move('d');
+    }
     public int getID() {return _id;}
 
     public int getType() {return _type;}
